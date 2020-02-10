@@ -37,10 +37,20 @@ class CreateOrdersTable extends Migration
       		    $table->index('id_lang','lang_order');
       		    $table->index('id_customer','customer_order');
 
-      		    $table->foreign('id_customer')
-      		        ->references('id_rider')->on('s')
+      		    $table->foreign('id_rider')
+      		        ->references('id_rider')->on('riders')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
+
+              $table->foreign('id_customer')
+                  ->references('id_customer')->on('customers')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+              $table->foreign('id_lang')
+          		     ->references('id_lang')->on('language')
+          		     ->onDelete('cascade')
+          		     ->onUpdate('cascade');
 
       		    $table->timestamps();
 

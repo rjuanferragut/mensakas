@@ -33,10 +33,30 @@ class CreateOrdersDetailsTable extends Migration
     		    $table->index('id_product','fk_orders_details_products');
     		    $table->index('id_tax_rule','fk_orders_details_tax_rules');
 
-    		    $table->foreign('id_order_invoice')
-    		        ->references('id_tax_rule')->on('s')
+    		    $table->foreign('id_order')
+    		        ->references('id_order')->on('orders')
     		        ->onDelete('cascade')
     		        ->onUpdate('cascade');
+
+            $table->foreign('id_order_invoice')
+                ->references('id_order_invoice')->on('invoices')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('id_supplier')
+                ->references('id_supplier')->on('suppliers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('id_product')
+                ->references('id_product')->on('products')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('id_tax_rule')
+                ->references('id_tax_rule')->on('tax_rules')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
     		    $table->timestamps();
 

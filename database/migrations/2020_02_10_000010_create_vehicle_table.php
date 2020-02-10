@@ -28,7 +28,7 @@ class VehicleTable extends Migration
        $table->index('type_vehicle','type_vehicle_id');
 
        $table->foreign('id_employee')
-           ->references('id_type_vehicle')->on('e')
+           ->references('id_type_vehicle')->on('type_vehicle')
            ->onDelete('cascade')
            ->onUpdate('cascade');
 

@@ -23,6 +23,7 @@ class CreateEmployeesTable extends Migration
       		    $table->string('lastname', 255);
       		    $table->string('email', 255)->default(null);
       		    $table->integer('phone');
+              $table->integer('id_address');
       		    $table->string('passwd', 255);
       		    $table->time('last_passwd_gen')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
       		    $table->boolean('active')->unsigned()->default('0');
@@ -38,9 +39,14 @@ class CreateEmployeesTable extends Migration
       		    $table->index('id_profile','profile_employee_fk');
 
       		    $table->foreign('id_profile')
-      		        ->references('id_profile')->on('s')
+      		        ->references('id_profile')->on('profiles')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
+
+              $table->foreign('id_address')
+                  ->references('id_address')->on('address')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
       		    $table->timestamps();
 

@@ -21,10 +21,15 @@ class StateTable extends Migration
 		    $table->index('id_country','fk_state_country');
 		    $table->index('id_zone','fk_state_zones');
 
-		    $table->foreign('id_country')
-		        ->references('id_zone')->on('s')
+		    $table->foreign('id_zone')
+		        ->references('id_zone')->on('zones')
 		        ->onDelete('cascade')
 		        ->onUpdate('cascade');
+
+        $table->foreign('id_country')
+    		    ->references('id_country')->on('country')
+    		    ->onDelete('cascade')
+    		    ->onUpdate('cascade');
 
 		    $table->timestamps();
 

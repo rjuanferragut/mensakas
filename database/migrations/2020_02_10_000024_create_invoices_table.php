@@ -31,10 +31,19 @@ class CreateInvoicesTable extends Migration
       		    $table->index('id_customer','customer_invoice');
 
       		    $table->foreign('id_customer')
-      		        ->references('id_tax_rule')->on('s')
+      		        ->references('id_customer')->on('customers')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
 
+              $table->foreign('tax_rule')
+          		      ->references('id_tax_rule')->on('tax_rules')
+          		      ->onDelete('cascade')
+          		      ->onUpdate('cascade');
+
+              $table->foreign('id_order')
+            		     ->references('id_order')->on('orders')
+            		     ->onDelete('cascade')
+            		     ->onUpdate('cascade');
       		    $table->timestamps();
 
       		});

@@ -27,7 +27,7 @@ class SuppliersCategoriesTable extends Migration
   		    $table->index('id_parent','id_parent_category_supplier');
 
   		    $table->foreign('id_parent')
-  		        ->references('id_supplier_category')->on('s')
+  		        ->references('id_supplier_category')->on('suppliers_categories')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
 

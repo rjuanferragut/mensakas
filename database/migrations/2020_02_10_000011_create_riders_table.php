@@ -19,7 +19,6 @@ class RidersTable extends Migration
   		    $table->integer('id_rider')->unsigned();
   		    $table->integer('id_employee')->unsigned();
   		    $table->integer('id_vehicle')->unsigned();
-  		    $table->integer('id_rider_zone')->unsigned();
   		    $table->boolean('active')->default('0');
   		    $table->integer('max_travel')->default('0');
 
@@ -30,9 +29,14 @@ class RidersTable extends Migration
   		    $table->index('id_rider_zone','zone_rider_id');
 
   		    $table->foreign('id_employee')
-  		        ->references('id_zone')->on('s')
+  		        ->references('id_employee')->on('employees')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
+
+          $table->foreign('id_vehicle')
+              ->references('id_vehicle')->on('vehicles')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
 
   		    $table->timestamps();
 

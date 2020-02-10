@@ -26,7 +26,7 @@ class CreateOrdersStateLangTable extends Migration
   		    $table->index('id_lang','fk__language');
 
   		    $table->foreign('id_lang')
-  		        ->references('id_orders_state')->on('e')
+  		        ->references('id_lang')->on('language')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
 

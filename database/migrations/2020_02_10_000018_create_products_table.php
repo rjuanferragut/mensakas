@@ -34,7 +34,17 @@ class CreateProductsTable extends Migration
       		    $table->index('id_tax_rules','taxes_fk');
 
       		    $table->foreign('id_category_default')
-      		        ->references('id_tax_rule')->on('s')
+      		        ->references('id_category_default')->on('products_categories')
+      		        ->onDelete('cascade')
+      		        ->onUpdate('cascade');
+
+              $table->foreign('id_supplier')
+          		      ->references('id_supplier')->on('suppliers')
+          		      ->onDelete('cascade')
+          		      ->onUpdate('cascade');
+
+              $table->foreign('id_tax_rules')
+      		        ->references('id_tax_rule')->on('tax_rules')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
 

@@ -23,9 +23,14 @@ class SuppliersCategoriesLangTable extends Migration
   		    $table->index('id_lang','id_lang_supplier');
 
   		    $table->foreign('id_category')
-  		        ->references('id_language')->on('e')
+  		        ->references('id_category')->on('suppliers_categories')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
+
+          $table->foreign('id_lang')
+      		      ->references('id_language')->on('language')
+      		      ->onDelete('cascade')
+      		      ->onUpdate('cascade');
 
   		    $table->timestamps();
 

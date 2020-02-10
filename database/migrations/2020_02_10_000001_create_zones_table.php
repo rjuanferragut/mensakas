@@ -12,7 +12,7 @@ class ZonesTable extends Migration
  		    $table->engine = 'InnoDB';
 
  		    $table->increments('id_zone')->unsigned();
- 		    $table->string('name', 64)->default('');
+ 		    $table->string('name', 64);
  		    $table->integer('zipcode')->default('0');
  		    $table->boolean('active')->default('0');
 

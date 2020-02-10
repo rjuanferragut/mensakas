@@ -27,10 +27,20 @@ class CreateOrdersHistoryTable extends Migration
     		    $table->index('id_employee','employee_order_history_fk');
     		    $table->index('id_order_state','fk_orders_history_orders_state');
 
-    		    $table->foreign('id_order_state')
-    		        ->references('id_order')->on('s')
+    		    $table->foreign('id_order')
+    		        ->references('id_order')->on('orders')
     		        ->onDelete('cascade')
     		        ->onUpdate('cascade');
+
+            $table->foreign('id_employee')
+              ->references('id_employee')->on('employees')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
+
+            $table->foreign('id_order_state')
+      	      ->references('id_order_state')->on('orders_state')
+      		     ->onDelete('cascade')
+      		     ->onUpdate('cascade');
 
     		    $table->timestamps();
 

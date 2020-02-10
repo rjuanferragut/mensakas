@@ -26,10 +26,20 @@ class CreateOrdersRiderTable extends Migration
       		    $table->index('id_rider','fk_orders_rider_rider');
       		    $table->index('id_order_invoice','fk_orders_rider_invoices');
 
-      		    $table->foreign('id_order_invoice')
-      		        ->references('id_rider')->on('s')
+      		    $table->foreign('id_order')
+      		        ->references('id_order')->on('orders')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
+
+              $table->foreign('id_rider')
+                  ->references('id_rider')->on('riders')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+              $table->foreign('id_order_invoice')
+                  ->references('id_invoice')->on('inoices')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
 
       		    $table->timestamps();
 

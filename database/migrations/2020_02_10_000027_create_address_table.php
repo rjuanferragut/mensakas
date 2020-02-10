@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdressTable extends Migration
+class CreateAddressTable extends Migration
 {
     /**
      * Run the migrations.
@@ -35,10 +35,30 @@ class CreateAdressTable extends Migration
 		    $table->index('id_country','fk_address_country');
 		    $table->index('id_state','fk_address_state');
 
-		    $table->foreign('id_country')
-		        ->references('id_supplier')->on('s')
+		    $table->foreign('id_customer')
+		        ->references('id_customer')->on('customers')
 		        ->onDelete('cascade')
 		        ->onUpdate('cascade');
+
+        $table->foreign('id_supplier')
+            ->references('id_supplier')->on('suppliers')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+        $table->foreign('id_rider')
+            ->references('id_rider')->on('riders')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+        $table->foreign('id_country')
+            ->references('id_country')->on('country')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');    
+
+            $table->foreign('id_state')
+                ->references('id_state')->on('states')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
 		    $table->timestamps();
 

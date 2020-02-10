@@ -17,6 +17,7 @@ class CreateOrdersStateTable extends Migration
   		    $table->engine = 'InnoDB';
 
   		    $table->increments('id_orders_state')->unsigned();
+          $table->integer('id_order');
   		    $table->boolean('invoice')->unsigned()->default('0');
   		    $table->boolean('send_email')->unsigned()->default('0');
   		    $table->boolean('active')->unsigned()->default('0');
@@ -24,6 +25,10 @@ class CreateOrdersStateTable extends Migration
 
   		    $table->timestamps();
 
+          $table->foreign('id_order')
+              ->references('id_order')->on('orders')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
   		});
     }
 

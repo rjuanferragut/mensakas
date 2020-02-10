@@ -17,7 +17,7 @@ class CreateMessagesTable extends Migration
       		    $table->engine = 'InnoDB';
 
       		    $table->increments('id_messages')->unsigned();
-      		    $table->integer('id_order')->unsigned();
+      		    $table->integer('id_order')->unsigned()->unique();
       		    $table->integer('id_supplier')->unsigned();
       		    $table->integer('id_rider')->unsigned();
       		    $table->integer('id_cart')->unsigned();
@@ -29,11 +29,21 @@ class CreateMessagesTable extends Migration
       		    $table->index('id_rider','fk_messages_riders');
 
       		    $table->foreign('id_order')
-      		        ->references('id_supplier')->on('s')
+      		        ->references('id_order')->on('orders')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
 
-      		    $table->timestamps();
+              $table->foreign('id_supplier')
+                   ->references('id_supplier')->on('suppliers')
+                   ->onDelete('cascade')
+                   ->onUpdate('cascade');
+
+              $table->foreign('id_rider')
+                ->references('id_rider')->on('riders')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+              $table->timestamps();
 
       		});
     }

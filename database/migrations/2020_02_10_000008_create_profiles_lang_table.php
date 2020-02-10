@@ -26,10 +26,14 @@ class ProfilesLangTable extends Migration
   		    $table->index('id_lang','lang_fk');
 
   		    $table->foreign('id_lang')
-  		        ->references('id_profile')->on('s')
+  		        ->references('id_lang')->on('language')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
 
+           $table->foreign('id_profile')
+              ->references('id_profile')->on('profiles')
+               ->onDelete('cascade')
+               ->onUpdate('cascade');
   		    $table->timestamps();
 
   		});
@@ -42,6 +46,6 @@ class ProfilesLangTable extends Migration
      */
     public function down()
     {
-		    Schema::drop('profiles_lang');        
+		    Schema::drop('profiles_lang');
     }
 }

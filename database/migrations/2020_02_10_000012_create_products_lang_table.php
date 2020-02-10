@@ -25,7 +25,7 @@ class CreateProductsLangTable extends Migration
   		    $table->index('id_lang','id_lang_product_lang_table_fk');
 
   		    $table->foreign('id_lang')
-  		        ->references('id_product')->on('s')
+  		        ->references('id_product')->on('language')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
 

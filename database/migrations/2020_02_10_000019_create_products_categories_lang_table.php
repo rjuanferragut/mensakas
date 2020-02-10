@@ -25,10 +25,15 @@ class CreateProductsCategoriesLangTable extends Migration
   		    $table->index('id_lang','id_lang_product_category_fk');
   		    $table->index('id_product','fk_products_categories_lang_products');
 
-  		    $table->foreign('id_product')
-  		        ->references('id_language')->on('e')
+  		    $table->foreign('id_lang')
+  		        ->references('id_language')->on('language')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
+
+          $table->foreign('id_product')
+              ->references('id_product')->on('products')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');    
 
   		    $table->timestamps();
 

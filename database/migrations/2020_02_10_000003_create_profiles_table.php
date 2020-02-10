@@ -17,6 +17,7 @@ class ProfilesTable extends Migration
   		    $table->engine = 'InnoDB';
 
   		    $table->increments('id_profile')->unsigned();
+          $table->char('name', 255);
   		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
   		    $table->time('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

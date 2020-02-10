@@ -27,7 +27,7 @@ class CreateProductsCategoriesTable extends Migration
       		    $table->index('id_parent','parent_category_fk');
 
       		    $table->foreign('id_parent')
-      		        ->references('id_product_categories')->on('s')
+      		        ->references('id_product_categories')->on('id_product_categories')
       		        ->onDelete('cascade')
       		        ->onUpdate('cascade');
 
