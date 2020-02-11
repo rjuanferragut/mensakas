@@ -26,8 +26,13 @@ class CreateCountryTable extends Migration
 		    $table->index('id_zone','fk_country_zones');
 		    $table->index('id_lang','fk_country_language');
 
+        $table->foreign('id_zone')
+            ->references('id_zone')->on('zones')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
 		    $table->foreign('id_lang')
-		        ->references('id_zone')->on('s')
+		        ->references('id_language')->on('language')
 		        ->onDelete('cascade')
 		        ->onUpdate('cascade');
 

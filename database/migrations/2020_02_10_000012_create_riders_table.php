@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RidersTable extends Migration
+class CreateRidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,14 +19,15 @@ class RidersTable extends Migration
   		    $table->integer('id_rider')->unsigned();
   		    $table->integer('id_employee')->unsigned();
   		    $table->integer('id_vehicle')->unsigned();
+          $table->integer('id_zone')->unsigned();
   		    $table->boolean('active')->default('0');
   		    $table->integer('max_travel')->default('0');
 
   		    $table->primary('id_rider');
 
-  		    $table->index('id_employee','employee_rider_id');
-  		    $table->index('id_vehicle','vehicle_rider_id');
-  		    $table->index('id_rider_zone','zone_rider_id');
+  		    $table->index('id_employee','id_employee');
+  		    $table->index('id_vehicle','id_vehicle');
+  		    $table->index('id_zone','id_zone');
 
   		    $table->foreign('id_employee')
   		        ->references('id_employee')->on('employees')
@@ -35,6 +36,12 @@ class RidersTable extends Migration
 
           $table->foreign('id_vehicle')
               ->references('id_vehicle')->on('vehicles')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
+
+
+          $table->foreign('id_zone')
+              ->references('id_zone')->on('zones')
               ->onDelete('cascade')
               ->onUpdate('cascade');
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SuppliersCategoriesTable extends Migration
+class CreateSuppliersCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,8 +21,8 @@ class SuppliersCategoriesTable extends Migration
   		    $table->boolean('active')->default('0');
   		    $table->integer('position')->default('0');
   		    $table->boolean('is_root_category')->default('0');
-  		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-  		    $table->time('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+  		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
+  		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
   		    $table->index('id_parent','id_parent_category_supplier');
 

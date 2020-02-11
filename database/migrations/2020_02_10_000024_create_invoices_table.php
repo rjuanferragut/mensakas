@@ -20,15 +20,15 @@ class CreateInvoicesTable extends Migration
       		    $table->integer('id_order')->unsigned();
       		    $table->integer('id_customer')->unsigned();
       		    $table->integer('number')->unsigned();
-      		    $table->time('delivery_time')->default('0000-00-00 00:00:00');
+      		    $table->timestamp('delivery_time')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
       		    $table->decimal('total_paid', 20, 2)->default('0.00');
       		    $table->integer('tax_rule')->unsigned();
 
       		    $table->unique('number','number');
 
-      		    $table->index('tax_rule','taxes_invoice');
-      		    $table->index('id_order','order_invoice');
-      		    $table->index('id_customer','customer_invoice');
+              $table->index('id_customer','id_customer');
+      		    $table->index('tax_rule','tax_rule');
+      		    $table->index('id_order','id_order');
 
       		    $table->foreign('id_customer')
       		        ->references('id_customer')->on('customers')

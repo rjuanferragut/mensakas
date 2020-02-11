@@ -20,11 +20,11 @@ class CreateOrdersRiderTable extends Migration
       		    $table->integer('id_order')->unsigned();
       		    $table->integer('id_rider')->unsigned();
       		    $table->integer('id_order_invoice')->unsigned();
-      		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
 
-      		    $table->index('id_order','fk_orders_rider_orders');
-      		    $table->index('id_rider','fk_orders_rider_rider');
-      		    $table->index('id_order_invoice','fk_orders_rider_invoices');
+      		    $table->index('id_order','id_order');
+      		    $table->index('id_rider','id_rider');
+      		    $table->index('id_order_invoice','id_order_invoice');
 
       		    $table->foreign('id_order')
       		        ->references('id_order')->on('orders')
@@ -37,7 +37,7 @@ class CreateOrdersRiderTable extends Migration
                   ->onUpdate('cascade');
 
               $table->foreign('id_order_invoice')
-                  ->references('id_invoice')->on('inoices')
+                  ->references('id_invoice')->on('invoices')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
 

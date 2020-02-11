@@ -21,14 +21,14 @@ class CreateOrdersDetailsTable extends Migration
     		    $table->integer('id_order_invoice')->unsigned();
     		    $table->integer('id_supplier')->unsigned();
     		    $table->integer('id_product')->unsigned();
-    		    $table->string('product_name', 255)->default('');
+    		    $table->string('product_name', 255)->default(null);
     		    $table->decimal('product_price', 20, 2)->default('0.00');
     		    $table->integer('product_quantity')->default('0');
     		    $table->integer('id_tax_rule')->unsigned()->default('0');
     		    $table->decimal('total_price', 20, 2)->unsigned()->default('0.00');
 
-    		    $table->index('id_order','fk_orders_details_orders');
-    		    $table->index('id_order_invoice','fk_orders_details_invoices');
+    		    $table->index('id_order','id_order');
+    		    $table->index('id_order_invoice','id_order_invoice');
     		    $table->index('id_supplier','fk_orders_details_suppliers');
     		    $table->index('id_product','fk_orders_details_products');
     		    $table->index('id_tax_rule','fk_orders_details_tax_rules');
@@ -39,7 +39,7 @@ class CreateOrdersDetailsTable extends Migration
     		        ->onUpdate('cascade');
 
             $table->foreign('id_order_invoice')
-                ->references('id_order_invoice')->on('invoices')
+                ->references('id_invoice')->on('invoices')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -49,9 +49,7 @@ class CreateOrdersDetailsTable extends Migration
                 ->onUpdate('cascade');
 
             $table->foreign('id_product')
-                ->references('id_product')->on('products')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->references('id_product')->on('products');
 
             $table->foreign('id_tax_rule')
                 ->references('id_tax_rule')->on('tax_rules')

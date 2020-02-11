@@ -16,20 +16,16 @@ class CreateProductsCategoriesTable extends Migration
       Schema::create('products_categories', function(Blueprint $table) {
       		    $table->engine = 'InnoDB';
 
-      		    $table->increments('id_product_categories')->unsigned();
-      		    $table->integer('id_parent')->unsigned()->default('0');
+      		    $table->increments('id_product_category')->unsigned();
+      		    $table->integer('id_parent')->unsigned()->nullable();
       		    $table->boolean('active')->default('0');
       		    $table->integer('position')->unsigned()->default('0');
       		    $table->boolean('is_root_category')->default('0');
-      		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-      		    $table->time('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
+      		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
-      		    $table->index('id_parent','parent_category_fk');
-
-      		    $table->foreign('id_parent')
-      		        ->references('id_product_categories')->on('id_product_categories')
-      		        ->onDelete('cascade')
-      		        ->onUpdate('cascade');
+      		    $table->index('id_parent','id_parent');
+      		    $table->foreign('id_parent')->references('id_product_category')->on('products_categories');
 
       		    $table->timestamps();
 

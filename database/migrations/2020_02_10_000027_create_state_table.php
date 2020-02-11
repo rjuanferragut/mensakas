@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class StateTable extends Migration
+class CreateStateTable extends Migration
 {
   public function up()
     {
@@ -14,12 +14,12 @@ class StateTable extends Migration
 		    $table->increments('id_state')->unsigned();
 		    $table->integer('id_country')->unsigned();
 		    $table->integer('id_zone')->unsigned();
-		    $table->string('name', 64)->default('');
+		    $table->string('name', 64)->default(null);
 		    $table->boolean('active')->default('0');
 
 		    $table->index('id_state','id_state');
-		    $table->index('id_country','fk_state_country');
-		    $table->index('id_zone','fk_state_zones');
+		    $table->index('id_country','id_country');
+		    $table->index('id_zone','id_zone');
 
 		    $table->foreign('id_zone')
 		        ->references('id_zone')->on('zones')

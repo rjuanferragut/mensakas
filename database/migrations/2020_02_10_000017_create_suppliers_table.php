@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SuppliersTable extends Migration
+class CreateSuppliersTable extends Migration
 {
   public function up()
      {
@@ -19,8 +19,8 @@ class SuppliersTable extends Migration
  		    $table->integer('zipcode')->default('0');
  		    $table->string('city', 155)->default('0');
  		    $table->integer('phone');
- 		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
- 		    $table->time('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+ 		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
+ 		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
  		    $table->boolean('active')->default('0');
 
  		    $table->unique('email','email');

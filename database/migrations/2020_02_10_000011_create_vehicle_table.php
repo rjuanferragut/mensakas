@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class VehicleTable extends Migration
+class CreateVehicleTable extends Migration
 {
   public function up()
    {
@@ -20,18 +20,27 @@ class VehicleTable extends Migration
        $table->integer('policy_number')->default(null);
        $table->integer('id_insurance')->unsigned()->default(null);
        $table->integer('id_employee')->unsigned();
-       $table->time('created_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-       $table->time('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+       $table->timestamp('created_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+       $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
        $table->index('id_employee','employee_vehicle_id');
        $table->index('id_insurance','insurance_id');
        $table->index('type_vehicle','type_vehicle_id');
 
        $table->foreign('id_employee')
-           ->references('id_type_vehicle')->on('type_vehicle')
+           ->references('id_employee')->on('employees')
            ->onDelete('cascade')
            ->onUpdate('cascade');
 
+      $table->foreign('id_insurance')
+          ->references('id_insurance')->on('insurance')
+          ->onDelete('cascade')
+          ->onUpdate('cascade');
+
+     $table->foreign('type_vehicle')
+         ->references('id_type_vehicle')->on('type_vehicle')
+         ->onDelete('cascade')
+         ->onUpdate('cascade');
        $table->timestamps();
 
    });

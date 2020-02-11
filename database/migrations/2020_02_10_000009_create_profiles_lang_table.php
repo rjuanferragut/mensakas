@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProfilesLangTable extends Migration
+class CreateProfilesLangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -22,11 +22,11 @@ class ProfilesLangTable extends Migration
   		    $table->string('name_profile', 50)->default('Translate not found');
   		    $table->string('decription_profile', 255)->default('Translate not found');
 
+          $table->index('id_lang','id_lang');
   		    $table->index('id_profile','id_profile');
-  		    $table->index('id_lang','lang_fk');
 
   		    $table->foreign('id_lang')
-  		        ->references('id_lang')->on('language')
+  		        ->references('id_language')->on('language')
   		        ->onDelete('cascade')
   		        ->onUpdate('cascade');
 

@@ -20,13 +20,12 @@ class CreateMessagesTable extends Migration
       		    $table->integer('id_order')->unsigned()->unique();
       		    $table->integer('id_supplier')->unsigned();
       		    $table->integer('id_rider')->unsigned();
-      		    $table->integer('id_cart')->unsigned();
       		    $table->text('message');
-      		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
 
-      		    $table->index('id_order','fk_messages_orders');
-      		    $table->index('id_supplier','fk_messages_suppliers');
-      		    $table->index('id_rider','fk_messages_riders');
+      		    $table->index('id_order','id_order');
+      		    $table->index('id_supplier','id_supplier');
+      		    $table->index('id_rider','id_rider');
 
       		    $table->foreign('id_order')
       		        ->references('id_order')->on('orders')

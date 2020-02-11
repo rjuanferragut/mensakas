@@ -22,12 +22,12 @@ class CreateCustomersTable extends Migration
   		    $table->string('secure_key', 32)->default('0');
   		    $table->string('first_name', 255)->default('0');
   		    $table->string('last_name', 255)->default('0');
-  		    $table->string('email', 255)->default('0');
+  		    $table->string('email', 150)->default('0');
   		    $table->integer('phone')->default('0');
-  		    $table->time('added_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-  		    $table->time('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+  		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
+  		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
   		    $table->string('reset_password_token', 40)->default('0');
-  		    $table->time('reset_password_date')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+  		    $table->timestamp('reset_password_date')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
   		    $table->unique('phone','phone');
   		    $table->unique('email','email');
