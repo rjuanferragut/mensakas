@@ -30,7 +30,7 @@ class AddFksAddressTable extends Migration
               ->onUpdate('cascade');
 
           $table->foreign('id_state')
-              ->references('id_state')->on('states')
+              ->references('id_state')->on('state')
               ->onDelete('cascade')
               ->onUpdate('cascade');
       });
