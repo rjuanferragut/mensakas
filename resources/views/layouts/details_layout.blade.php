@@ -23,16 +23,16 @@
             <td>Breve descripción o función</td>
               <td class="td-actions">
                 <!--redirect to the correct page  -->
-                <a href="{{route('employees.details')}}" class="btn btn-small btn-primary">
+                <a href="{{route('customers.details')}}" class="btn btn-small btn-primary">
                   <i class="fas fa-sign-out-alt"></i>
                 </a>
               </td>
             </tr>
-                    </tbody>
-                  </table>
+          </tbody>
+        </table>
 
-                </div> <!-- /widget-content -->
+      </div> <!-- /widget-content -->
 
-              </div> <!-- /widget -->
-            </div>
+    </div> <!-- /widget -->
+  </div>
 @endsection

@@ -1,5 +1,5 @@
-@extends('layouts.adminpanel.headerAdminpanel')
-@extends('layouts.adminpanel.sidebarAdminpanel')
+@extends('layouts.dashboard.head')
+@extends('layouts.dashboard.sidebar')
 @section('content')
 <div class="container pl-5">
   <div>
@@ -10,7 +10,6 @@
       <li>UPDATE</li>
       <li>DELETE</li>
     </ul>
-
   </div>
   <p>AQUÍ VAN LISTAS CON LA INFO EXTENDIDA DEL OBJETO SELECCIONADO</p>
 </div>

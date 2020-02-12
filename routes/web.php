@@ -11,33 +11,32 @@
 |
 */
 // administration & index
-Route::get('/','Panelcontroller@index')->name('index');
-
-Route::get('/dashboard','Panelcontroller@dashboard')->name('dashboard')->middleware('auth');
+Route::get('/','HomeController@index')->name('index');
 
 // customers
-
-Route::get('/customers','Panelcontroller@customers')->name('customers.index')->middleware('auth');
-Route::get('/customer','Panelcontroller@customer')->name('customers.details')->middleware('auth');
+Route::get('/customers','CustomersController@index')->name('customers.index')->middleware('auth');
+Route::get('/customer/{id}','CustomersController@details')->name('customer.details')->middleware('auth');
+Route::get('/customer/create', 'CustomersController@create')->name('customer.create')->middleware('auth');
+Route::post('/customer/store', 'CustomersController@store')->name('customer.store');
 
 // employees
-Route::get('/employees','Panelcontroller@employees')->name('employees.index')->middleware('auth');
-Route::get('/employee','Panelcontroller@employee')->name('employees.details')->middleware('auth');
+Route::get('/employees','HomeController@employees')->name('employees.index')->middleware('auth');
+Route::get('/employee','HomeController@employee')->name('employees.details')->middleware('auth');
 
 // orders
-Route::get('/orders','Panelcontroller@orders')->name('orders.index')->middleware('auth');
-Route::get('/order','Panelcontroller@order')->name('orders.details')->middleware('auth');
+Route::get('/orders','HomeController@orders')->name('orders.index')->middleware('auth');
+Route::get('/order','HomeController@order')->name('orders.details')->middleware('auth');
 
 // products
-Route::get('/products','Panelcontroller@products')->name('products.index')->middleware('auth');
+Route::get('/products','HomeController@products')->name('products.index')->middleware('auth');
 
 // riders
-Route::get('/riders','Panelcontroller@riders')->name('riders.index')->middleware('auth');
-Route::get('/rider','Panelcontroller@rider')->name('riders.details')->middleware('auth');
+Route::get('/riders','HomeController@riders')->name('riders.index')->middleware('auth');
+Route::get('/rider','HomeController@rider')->name('riders.details')->middleware('auth');
 
 // suppliers
-Route::get('/suppliers','Panelcontroller@suppliers')->name('suppliers.index')->middleware('auth');
-Route::get('/supplier','Panelcontroller@supplier')->name('suppliers.details')->middleware('auth');
+Route::get('/suppliers','HomeController@suppliers')->name('suppliers.index')->middleware('auth');
+Route::get('/supplier','HomeController@supplier')->name('suppliers.details')->middleware('auth');
 
 // auth
 Auth::routes();

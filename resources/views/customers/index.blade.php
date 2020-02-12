@@ -1,5 +1,5 @@
-@extends('layouts.adminpanel.headerAdminpanel')
-@extends('layouts.adminpanel.sidebarAdminpanel')
+@extends('layouts.dashboard.head')
+@extends('layouts.dashboard.sidebar')
 @extends('layouts.details_layout')
 
 @section('content')
@@ -15,7 +15,7 @@
   </div>
   <!-- este enlace ha de ir dentro del layouts.details_layout en el sitio indicado -->
   <div class="links">
-    <a href="{{route('customers.details')}}">Customer detail</a>
+    <a href="{{route('customer.details')}}">Customer detail</a>
   </div>
 </div>
 @endsection
