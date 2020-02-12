@@ -58,33 +58,6 @@ class CreateOrdersDetailsTable extends Migration
 
     		    $table->timestamps();
     		});
-
-        Schema::table('address', function (Blueprint $table) {
-    		    $table->foreign('id_customer')
-    		        ->references('id_customer')->on('customers')
-    		        ->onDelete('cascade')
-    		        ->onUpdate('cascade');
-
-            $table->foreign('id_supplier')
-                ->references('id_supplier')->on('suppliers')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('id_rider')
-                ->references('id_rider')->on('riders')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('id_country')
-                ->references('id_country')->on('country')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('id_state')
-                ->references('id_orders_state')->on('orders_state')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-        });
     }
 
     /**
