@@ -18,15 +18,6 @@
   <aside>
     <div class="sidebar left position-absolute sidebarresponsive fliph"  style="height: 100vh; z-index:2;">
       <a href="#" class="button-left text-white ml-2 d-md-block d-lg-none"><span class="fa fa-fw fa-bars "></span></a>
-      <!-- <div class="customers-panel d-md-block d-lg-none">
-        <div class="pull-left image">
-          <img src="http://via.placeholder.com/50x50" class="rounded-circle" alt="customers Image">
-        </div>
-        <div class="pull-left info">
-          <p>Developer</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a><br/>
-        </div>
-      </div> -->
       <ul class="list-sidebar bg-defoult">
         <li> <a href="{{route('index')}}"><i class="fa fa-diamond"></i> <span class="nav-label">Home</span></a> </li>
         <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
