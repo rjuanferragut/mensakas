@@ -21,7 +21,7 @@ Route::post('/customer/store', 'CustomersController@store')->name('customer.stor
 
 // employees
 Route::get('/employees','EmployeesController@index')->name('employees.index')->middleware('auth');
-Route::get('/employee','EmployeesController@details')->name('employees.details')->middleware('auth');
+Route::get('/employee/{id}','EmployeesController@details')->name('employees.details')->middleware('auth');
 
 // orders
 Route::get('/orders','HomeController@orders')->name('orders.index')->middleware('auth');
