@@ -14,8 +14,6 @@ class CreateTypeVehicleTable extends Migration
  		    $table->increments('id_type_vehicle')->unsigned();
  		    $table->string('name', 70)->default('');
  		    $table->string('specs', 70)->default(null);
- 		    $table->timestamp('created_on')->default(DB::raw('CURRENT_TIMESTAMP'));
- 		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
  		    $table->timestamps();
 

@@ -21,7 +21,6 @@ class CreateMessagesTable extends Migration
       		    $table->integer('id_supplier')->unsigned();
       		    $table->integer('id_rider')->unsigned();
       		    $table->text('message');
-      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
 
       		    $table->index('id_order','id_order');
       		    $table->index('id_supplier','id_supplier');

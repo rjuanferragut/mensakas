@@ -24,8 +24,6 @@ class CreateCustomersTable extends Migration
   		    $table->string('last_name', 255)->default('0');
   		    $table->string('email', 150)->default('0');
   		    $table->integer('phone')->default('0');
-  		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-  		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
   		    $table->string('reset_password_token', 40)->default('0');
   		    $table->timestamp('reset_password_date')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

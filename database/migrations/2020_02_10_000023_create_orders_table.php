@@ -30,8 +30,6 @@ class CreateOrdersTable extends Migration
       		    $table->integer('invoice_num')->unsigned();
       		    $table->date('invoice_date')->default(Carbon::now());
       		    $table->timestamp('delivery_time')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-      		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
       		    $table->index('id_rider','id_rider');
       		    $table->index('id_lang','id_lang');

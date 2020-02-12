@@ -20,8 +20,6 @@ class CreateOrdersHistoryTable extends Migration
     		    $table->integer('id_order')->unsigned();
     		    $table->integer('id_employee')->unsigned();
     		    $table->integer('id_order_state')->unsigned();
-    		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-    		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
     		    $table->index('id_order','id_order');
     		    $table->index('id_employee','id_employee');

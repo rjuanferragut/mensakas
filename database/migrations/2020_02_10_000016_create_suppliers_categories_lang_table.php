@@ -16,8 +16,6 @@ class CreateSuppliersCategoriesLangTable extends Migration
   		    $table->string('name', 128)->default('');
   		    $table->integer('id_lang')->unsigned();
   		    $table->string('description', 255)->default('');
-  		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-  		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
   		    $table->index('id_category','id_category_suppliers_lang_fk');
   		    $table->index('id_lang','id_lang_supplier');

@@ -26,8 +26,6 @@ class CreateAddressTable extends Migration
 		    $table->integer('zipcode')->default('0');
 		    $table->boolean('active')->default('0');
 		    $table->boolean('deleted')->default('0');
-		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP'));
 
 		    $table->timestamps();
 		});

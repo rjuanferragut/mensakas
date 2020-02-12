@@ -18,8 +18,6 @@ class CreateProfilesTable extends Migration
 
   		    $table->increments('id_profile')->unsigned();
           $table->char('name', 255);
-  		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-  		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
   		    $table->timestamps();
 

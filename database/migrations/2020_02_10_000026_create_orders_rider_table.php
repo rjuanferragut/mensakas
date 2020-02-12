@@ -20,7 +20,6 @@ class CreateOrdersRiderTable extends Migration
       		    $table->integer('id_order')->unsigned();
       		    $table->integer('id_rider')->unsigned();
       		    $table->integer('id_order_invoice')->unsigned();
-      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
 
       		    $table->index('id_order','id_order');
       		    $table->index('id_rider','id_rider');

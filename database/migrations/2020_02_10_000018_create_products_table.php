@@ -26,8 +26,6 @@ class CreateProductsTable extends Migration
       		    $table->decimal('price', 20, 2)->default('0.00');
       		    $table->decimal('additional_shipping_cost', 20, 2)->default('0.00');
       		    $table->boolean('gluten_contains')->default('0');
-      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-      		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
       		    $table->index('id_category_default','id_category_default');
       		    $table->index('id_supplier','id_supplier');
