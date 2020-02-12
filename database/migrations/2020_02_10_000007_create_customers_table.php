@@ -32,8 +32,10 @@ class CreateCustomersTable extends Migration
   		    $table->unique('phone','phone');
   		    $table->unique('email','email');
 
-  		    $table->timestamps();
-
+          $table->foreign('id_lang')
+              ->references('id_language')->on('language')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
   		});
     }
 

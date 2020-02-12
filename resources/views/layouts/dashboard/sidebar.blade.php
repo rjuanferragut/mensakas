@@ -36,4 +36,3 @@
   </aside>
 </div>
 @endsection
-@extends('layouts.breadcrumb')
