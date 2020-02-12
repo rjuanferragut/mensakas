@@ -1,4 +1,3 @@
-@extends('layouts.dashboard.head')
 @extends('layouts.dashboard.sidebar')
 @extends('layouts.details_layout')
 

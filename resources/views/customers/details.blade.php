@@ -1,4 +1,3 @@
-@extends('layouts.dashboard.head')
 @extends('layouts.dashboard.sidebar')
 @section('content')
 <div class="container pl-5">
