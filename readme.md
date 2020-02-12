@@ -21,11 +21,11 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Instalar Base de Datos MySQL
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+La base de datos de Mensakas está pensada para abarcar todas las necesidades de la cooperativa. Esto incluye algunas tablas para gestionar el personal, vehículos y otras tareas administrativas que pueda necesitar la empresa.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Una vez ha sido clonado el repositorio, se debe abrir una consola y situarse en la raíz del proyecto. **Es necesario tener una base de datos vacía ya creada en el sistema.** Debe modificarse el fichero .env y reemplazar las credenciales de conexión a la base de datos. Una vez realizado este paso, podemos ejecutar el comando [php artisan migrate](hweqw) para comenzar a crear todas las tablas. Puedes encontrar más información sobre las migraciones en [Laravel](https://laravel.com) que te pueden ayudar a resolver algunas dudas o a modificar las migraciones de ser necesario.
 
 ## Laravel Sponsors
 
