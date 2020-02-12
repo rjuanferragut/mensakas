@@ -19,9 +19,9 @@ class CreateAddressTable extends Migration
 		    $table->increments('id_address')->unsigned();
 		    $table->integer('id_country')->unsigned();
 		    $table->integer('id_state')->unsigned();
-		    $table->integer('id_customer')->unsigned();
-		    $table->integer('id_supplier')->unsigned();
-		    $table->integer('id_rider')->unsigned();
+		    $table->integer('id_customer')->unsigned()->nullable();
+		    $table->integer('id_supplier')->unsigned()->nullable();
+		    $table->integer('id_rider')->unsigned()->nullable();
 		    $table->string('address', 128)->default('');
 		    $table->integer('zipcode')->default('0');
 		    $table->boolean('active')->default('0');
