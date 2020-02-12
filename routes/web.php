@@ -15,13 +15,15 @@ Route::get('/','HomeController@index')->name('index');
 
 // customers
 Route::get('/customers','CustomersController@index')->name('customers.index')->middleware('auth');
-Route::get('/customer','CustomersController@details')->name('customer.details')->middleware('auth');
+Route::get('/customer/{id}','CustomersController@details')->name('customer.details')->middleware('auth');
 Route::get('/customer/create', 'CustomersController@create')->name('customer.create')->middleware('auth');
 Route::post('/customer/store', 'CustomersController@store')->name('customer.store');
 
 // employees
 Route::get('/employees','EmployeesController@index')->name('employees.index')->middleware('auth');
 Route::get('/employee/{id}','EmployeesController@details')->name('employees.details')->middleware('auth');
+Route::get('/employee/create', 'EmployeesController@create')->name('employee.create')->middleware('auth');
+Route::post('/employee/store', 'EmployeesController@store')->name('employee.store');
 
 // orders
 Route::get('/orders','HomeController@orders')->name('orders.index')->middleware('auth');
