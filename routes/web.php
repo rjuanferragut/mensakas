@@ -20,8 +20,8 @@ Route::get('/customer/create', 'CustomersController@create')->name('customer.cre
 Route::post('/customer/store', 'CustomersController@store')->name('customer.store');
 
 // employees
-Route::get('/employees','HomeController@employees')->name('employees.index')->middleware('auth');
-Route::get('/employee','HomeController@employee')->name('employees.details')->middleware('auth');
+Route::get('/employees','EmployeesController@index')->name('employees.index')->middleware('auth');
+Route::get('/employee','EmployeesController@details')->name('employees.details')->middleware('auth');
 
 // orders
 Route::get('/orders','HomeController@orders')->name('orders.index')->middleware('auth');

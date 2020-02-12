@@ -1,5 +1,6 @@
 @extends('layouts.dashboard.head')
 @extends('layouts.dashboard.sidebar')
+<!-- @extends('layouts.details_layout') -->
 @section('content')
 
 <form class="form-group" action="{{route('customer.store')}}" method="post">
