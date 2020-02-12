@@ -1,3 +1,4 @@
+@extends('layouts.dashboard.head')
 @section('sidebar')
 <header class="header">
   <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 overflow-hidden" style="background-color:#462952">
@@ -6,7 +7,7 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown  customers-menu ">
           <a class="nav-link dropdown-toggle d-inline-block" href="{{route('home')}}" id="navbarDropdownMenuLink">
-            <img src="https://media-exp1.licdn.com/dms/image/C560BAQHZrWAf-vJoCA/company-logo_200_200/0?e=2159024400&v=beta&t=Ggf-Fbf9Oe0A_lLm6xfAISNgEBClfZ-qC8is_Ea59n0" class="customers-imag" style="width:40px" alt="customers Image" >
+            <img src="https://media-exp1.licdn.com/dms/image/C560BAQHZrWAf-vJoCA/company-logo_200_200/0?e=2159024400&v=beta&t=Ggf-Fbf9Oe0A_lLm6xfAISNgEBClfZ-qC8is_Ea59n0" class="customers-image" style="width:40px" alt="customers Image" >
             <span class="">Developer</span>
           </a>
         </li>
@@ -31,14 +32,6 @@
             <li><a href="{{route('employees.index')}}">Employees</a></li>
           </ul>
         </li>
-        <!-- <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
-          <ul class="sub-menu collapse" id="products">
-            <li class="active"><a href="#">CSS3 Animation</a></li>
-            <li><a href="#">General</a></li>
-            <li><a href="#">Buttons</a></li>
-            <li><a href="#">Tabs & Accordions</a></li>
-          </ul>
-        </li> -->
       </ul>
     </div>
 

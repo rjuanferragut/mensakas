@@ -1,6 +1,5 @@
-@extends('layouts.adminpanel.headerAdminpanel')
-@extends('layouts.adminpanel.sidebarAdminpanel')
-@section('content')
+@extends('layouts.dashboard.sidebar')
+@extends('layouts.details_layout')
 <div class="container pl-5">
   <div>
     <h1 class="mt-5 text-center"> Welcome to the products panel</h1>

@@ -1,5 +1,4 @@
-@extends('layouts.adminpanel.headerAdminpanel')
-@extends('layouts.adminpanel.sidebarAdminpanel')
+@extends('layouts.dashboard.sidebar')
 @extends('layouts.details_layout')
 
 @section('content')
