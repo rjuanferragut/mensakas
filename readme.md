@@ -7,9 +7,11 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Instalar Aplicación Mensakas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Para instalar la aplicación de gestión Mensakas, es necesario descargar la última release disponible en este repositorio y descomprimirla. La descompresión de la release debe hacerse en la ruta a la que apunta el servidor apache (u otro, si procede). Puede consultar las rutas que utiliza apache por defecto [en este enlace](https://httpd.apache.org/docs/2.4/urlmapping.html).
+
+# Requisitos mínimos
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
@@ -20,6 +22,8 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
+
+# Requisitos recomendados
 
 ## Instalar Base de Datos MySQL
 
