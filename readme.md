@@ -25,7 +25,17 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 La base de datos de Mensakas está pensada para abarcar todas las necesidades de la cooperativa. Esto incluye algunas tablas para gestionar el personal, vehículos y otras tareas administrativas que pueda necesitar la empresa.
 
-Una vez ha sido clonado el repositorio, se debe abrir una consola y situarse en la raíz del proyecto. **Es necesario tener una base de datos vacía ya creada en el sistema.** Debe modificarse el fichero .env y reemplazar las credenciales de conexión a la base de datos. Una vez realizado este paso, podemos ejecutar el comando [php artisan migrate](hweqw) para comenzar a crear todas las tablas. Puedes encontrar más información sobre las migraciones en [Laravel](https://laravel.com) que te pueden ayudar a resolver algunas dudas o a modificar las migraciones de ser necesario.
+Para realizar la creación de tablas, debe estar el repositorio clonado, abrir una consola y situarse en la raíz del proyecto. **Es necesario tener una base de datos vacía ya creada en el sistema.** Debe modificarse el fichero .env y reemplazar las credenciales de conexión a la base de datos.
+
+El fichero .env tendrá una lista con las crendenciales ya puestas por defecto. Se **recomienda encarecidamente, cambiar la contraseña y el usuario** en entorno de producción.
+- **[DB_CONNECTION=mysql]**  Motor de la base de datos
+- **[DB_HOST=127.0.0.1]**    Dirección IP del servidor en el que se encuentra la base de datos
+- **[DB_PORT=3306]**         Puerto por el que acceder a la DB
+- **[DB_DATABASE=mensakas]** Nombre de la DB
+- **[DB_USERNAME=root]**     Nombre de usuario de la DB
+- **[DB_PASSWORD=P@ssw0rd]** Contraseña de autenticación
+
+Una vez realizado este paso, podemos ejecutar el comando [php artisan migrate](https://laravel.com/docs/5.8/migrations#running-migrations) para comenzar a crear todas las tablas. Puedes encontrar más información sobre las migraciones en [Laravel](https://laravel.com/docs/5.8/migrations) que te pueden ayudar a resolver algunas dudas o a modificar las migraciones de ser necesario.
 
 ## Laravel Sponsors
 
