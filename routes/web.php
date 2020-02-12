@@ -20,7 +20,7 @@ Route::get('/customer/create', 'CustomersController@create')->name('customer.cre
 Route::post('/customer/store', 'CustomersController@store')->name('customer.store');
 
 // employees
-Route::get('/employees','HomeController@employees')->name('employees.index')->middleware('auth');
+Route::get('/employees','Employees@employees')->name('employees.index')->middleware('auth');
 Route::get('/employee','HomeController@employee')->name('employees.details')->middleware('auth');
 
 // orders
@@ -35,8 +35,8 @@ Route::get('/riders','HomeController@riders')->name('riders.index')->middleware(
 Route::get('/rider','HomeController@rider')->name('riders.details')->middleware('auth');
 
 // suppliers
-Route::get('/suppliers','HomeController@suppliers')->name('suppliers.index')->middleware('auth');
-Route::get('/supplier','HomeController@supplier')->name('suppliers.details')->middleware('auth');
+Route::get('/suppliers','SuppliersController@index')->name('suppliers.index')->middleware('auth');
+Route::get('/supplier','SuppliersController@details')->name('suppliers.details')->middleware('auth');
 
 // auth
 Auth::routes();

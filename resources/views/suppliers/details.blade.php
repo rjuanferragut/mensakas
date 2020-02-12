@@ -1,9 +1,9 @@
-@extends('layouts.adminpanel.headerAdminpanel')
-@extends('layouts.adminpanel.sidebarAdminpanel')
+@extends('layouts.dashboard.head')
+@extends('layouts.dashboard.sidebar')
 @section('content')
 <div class="container pl-5">
   <div>
-    <h1 class="mt-5 text-center"> Welcome to the suppliers details</h1>
+    <h1 class="mt-5 text-center">Welcome to the suppliers details</h1>
     <ul>
       <li>CREATE</li>
       <li>READ</li>
