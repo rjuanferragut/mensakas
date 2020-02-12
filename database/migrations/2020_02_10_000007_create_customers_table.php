@@ -42,7 +42,6 @@ class CreateCustomersTable extends Migration
              ->references('id_address')->on('address')
              ->onDelete('cascade')
              ->onUpdate('cascade');
-
   		});
     }
 
