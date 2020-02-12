@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #462952;
+                color: #a2b0b7;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -49,7 +49,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #a2b0b7;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="./adminpanel">Admin Panel</a>
+                    <a href="{{route('dashboard')}}">Admin Panel</a>
                 </div>
             </div>
         </div>

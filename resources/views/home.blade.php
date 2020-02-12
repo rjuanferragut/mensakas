@@ -17,6 +17,9 @@
                     You are logged in!
                 </div>
             </div>
+            <div class="links mt-3">
+              <a href="{{route('dashboard')}}">Dashboard</a>
+            </div>
         </div>
     </div>
 </div>
