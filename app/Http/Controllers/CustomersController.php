@@ -19,7 +19,6 @@ class CustomersController extends Controller
     }
 
     public function details($id) {
-      // dd($id);
         return view('customers.details')->with('id');
     }
 
