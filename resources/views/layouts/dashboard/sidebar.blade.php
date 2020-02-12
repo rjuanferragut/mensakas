@@ -19,15 +19,6 @@
   <aside>
     <div class="sidebar left position-absolute sidebarresponsive fliph"  style="height: 100vh; z-index:2;">
       <a href="#" class="button-left text-white ml-2 d-md-block d-lg-none"><span class="fa fa-fw fa-bars "></span></a>
-      <!-- <div class="customers-panel d-md-block d-lg-none">
-        <div class="pull-left image">
-          <img src="http://via.placeholder.com/50x50" class="rounded-circle" alt="customers Image">
-        </div>
-        <div class="pull-left info">
-          <p>Developer</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a><br/>
-        </div>
-      </div> -->
       <ul class="list-sidebar bg-defoult">
         <li> <a href="{{route('index')}}"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a> </li>
         <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active"><i class="fas fa-list-alt"></i><span class="nav-label">Menús</span> <span class="fa fa-chevron-left pull-right"></span> </a>
@@ -41,14 +32,6 @@
             <li><a href="{{route('employees.index')}}">Employees</a></li>
           </ul>
         </li>
-        <!-- <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
-          <ul class="sub-menu collapse" id="products">
-            <li class="active"><a href="#">CSS3 Animation</a></li>
-            <li><a href="#">General</a></li>
-            <li><a href="#">Buttons</a></li>
-            <li><a href="#">Tabs & Accordions</a></li>
-          </ul>
-        </li> -->
       </ul>
     </div>
 
