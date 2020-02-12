@@ -15,7 +15,7 @@ Route::get('/','HomeController@index')->name('index');
 
 // customers
 Route::get('/customers','CustomersController@index')->name('customers.index')->middleware('auth');
-Route::get('/customer/{id}','CustomersController@details')->name('customer.details')->middleware('auth');
+Route::get('/customer','CustomersController@details')->name('customer.details')->middleware('auth');
 Route::get('/customer/create', 'CustomersController@create')->name('customer.create')->middleware('auth');
 Route::post('/customer/store', 'CustomersController@store')->name('customer.store');
 
