@@ -16,8 +16,9 @@ class CreateCustomersTable extends Migration
       Schema::create('customers', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
-  		    $table->increments('id_customer')->unsigned();
+          $table->increments('id_customer')->unsigned();
   		    $table->integer('id_lang')->unsigned();
+          $table->integer('id_address')->unsigned();
   		    $table->boolean('is_guest')->default('0');
   		    $table->string('secure_key', 32)->default('0');
   		    $table->string('first_name', 255)->default('0');
@@ -32,7 +33,15 @@ class CreateCustomersTable extends Migration
   		    $table->unique('phone','phone');
   		    $table->unique('email','email');
 
-  		    $table->timestamps();
+          $table->foreign('id_lang')
+              ->references('id_language')->on('language')
+              ->onDelete('cascade')
+              ->onUpdate('cascade');
+
+         $table->foreign('id_address')
+             ->references('id_address')->on('address')
+             ->onDelete('cascade')
+             ->onUpdate('cascade');
 
   		});
     }
