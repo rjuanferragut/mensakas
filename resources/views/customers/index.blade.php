@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.sidebar')
 @section('content')
 
-{{-- <div class="container pl-5">
+<!-- <div class="container pl-5">
   <div>
     <h1 class="mt-5 text-center"> Welcome to the Customer's panel</h1>
     <ul>
@@ -10,14 +10,14 @@
       <li>UPDATE</li>
       <li>DELETE</li>
     </ul>
-  </div>
+  </div> -->
   <!-- este enlace ha de ir dentro del layouts.details_layout en el sitio indicado -->
-  <div class="links">
+  <!-- <div class="links">
     <a href="">Customer detail</a>
   </div>
-</div> --}}
+</div>  -->
 
-<div class="container-fluid">
+<div class="container-fluid pl-5">
 	<div class="row">
 		<div class="col-md-12">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -30,7 +30,7 @@
 						<li class="nav-item dropdown">
 							 <a class="nav-link dropdown-toggle" href="http://example.com" id="customersActionsMenu" data-toggle="dropdown">Actions</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="#customersActionsMenu">
-								 {{-- <a class="dropdown-item" data-toggle="modal" data-target="#createCustomer">New customer</a> --}}
+								 <!-- <a class="dropdown-item" data-toggle="modal" data-target="#createCustomer">New customer</a> -->
                  <button type="button" class="dropdown-item" data-toggle="modal" data-target="#createCustomerModal">New customer</button>
                  <a class="dropdown-item" href="#">Order last first</a>
                  <a class="dropdown-item" href="#">Something else here</a>
