@@ -17,13 +17,7 @@ class CreateZonesTable extends Migration
  		    $table->integer('zipcode')->default('0');
  		    $table->boolean('active')->default('0');
 
-        $table->foreign('id_state')
-            ->references('id_state')->on('state')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
-        $table->timestamps();
-
+ 		    $table->timestamps();
  		});
 
 
