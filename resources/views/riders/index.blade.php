@@ -1,6 +1,5 @@
-@extends('layouts.dashboard.head')
 @extends('layouts.dashboard.sidebar')
-<!-- @extends('layouts.details_layout') -->
+@extends('layouts.details_layout')
 
 @section('content')
 <div class="container pl-5">
@@ -13,10 +12,6 @@
       <li>DELETE</li>
     </ul>
   </div>
-  <!-- este enlace ha de ir dentro del layouts.details_layout en el sitio indicado -->
 
-  <div class="links">
-    <a href="{{route('riders.details')}}">rider detail</a>
-  </div>
 </div>
 @endsection

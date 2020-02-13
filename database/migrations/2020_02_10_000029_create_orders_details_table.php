@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateOrdersDetailsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('orders_details', function(Blueprint $table) {
     		    $table->engine = 'InnoDB';
 
@@ -58,42 +52,9 @@ class CreateOrdersDetailsTable extends Migration
 
     		    $table->timestamps();
     		});
-
-        Schema::table('address', function (Blueprint $table) {
-    		    $table->foreign('id_customer')
-    		        ->references('id_customer')->on('customers')
-    		        ->onDelete('cascade')
-    		        ->onUpdate('cascade');
-
-            $table->foreign('id_supplier')
-                ->references('id_supplier')->on('suppliers')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('id_rider')
-                ->references('id_rider')->on('riders')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('id_country')
-                ->references('id_country')->on('country')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->foreign('id_state')
-                ->references('id_orders_state')->on('orders_state')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-        });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('orders_details');
     }
 }

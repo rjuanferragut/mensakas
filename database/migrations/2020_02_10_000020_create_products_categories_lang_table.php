@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateProductsCategoriesLangTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up() {
       Schema::create('products_categories_lang', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
@@ -36,17 +30,10 @@ class CreateProductsCategoriesLangTable extends Migration
               ->onUpdate('cascade');
 
   		    $table->timestamps();
-
   		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('products_categories_lang');
     }
 }

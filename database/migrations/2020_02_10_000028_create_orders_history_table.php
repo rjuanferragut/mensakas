@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateOrdersHistoryTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('orders_history', function(Blueprint $table) {
     		    $table->engine = 'InnoDB';
 
@@ -20,8 +14,6 @@ class CreateOrdersHistoryTable extends Migration
     		    $table->integer('id_order')->unsigned();
     		    $table->integer('id_employee')->unsigned();
     		    $table->integer('id_order_state')->unsigned();
-    		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-    		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
     		    $table->index('id_order','id_order');
     		    $table->index('id_employee','id_employee');
@@ -43,17 +35,10 @@ class CreateOrdersHistoryTable extends Migration
       		     ->onUpdate('cascade');
 
     		    $table->timestamps();
-
     		});
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    
+    public function down() {
         Schema::dropIfExists('orders_history');
     }
 }

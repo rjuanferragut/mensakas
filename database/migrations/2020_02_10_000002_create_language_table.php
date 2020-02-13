@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateLanguageTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up() {
       Schema::create('language', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
@@ -23,17 +17,10 @@ class CreateLanguageTable extends Migration
   		    $table->boolean('default')->default('0');
 
   		    $table->timestamps();
-
   		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+      public function down()  {
         Schema::dropIfExists('language');
     }
 }

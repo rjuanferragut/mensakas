@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateSuppliersTable extends Migration
 {
-  public function up()
-     {
+  public function up()  {
  		Schema::create('suppliers', function(Blueprint $table) {
  		    $table->engine = 'InnoDB';
 
@@ -19,12 +18,8 @@ class CreateSuppliersTable extends Migration
  		    $table->integer('zipcode')->default('0');
  		    $table->string('city', 155)->default('0');
  		    $table->integer('phone');
- 		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
- 		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
- 		    $table->boolean('active')->default('0');
-
+        $table->boolean('active')->default('0');
  		    $table->unique('email','email');
-
  		    $table->index('id_category_supplier','supplier_category');
 
  		    $table->foreign('id_category_supplier')
@@ -33,19 +28,10 @@ class CreateSuppliersTable extends Migration
  		        ->onUpdate('cascade');
 
  		    $table->timestamps();
+ 		   });
+   }
 
- 		});
-
-
-     }
-
-     /**
-      * Reverse the migrations.
-      *
-      * @return void
-      */
-     public function down()
-     {
+     public function down() {
  		Schema::drop('suppliers');
 
      }

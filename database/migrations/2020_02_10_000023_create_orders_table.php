@@ -7,13 +7,7 @@ use Carbon\Carbon;
 
 class CreateOrdersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('orders', function(Blueprint $table) {
       		    $table->engine = 'InnoDB';
 
@@ -30,8 +24,6 @@ class CreateOrdersTable extends Migration
       		    $table->integer('invoice_num')->unsigned();
       		    $table->date('invoice_date')->default(Carbon::now());
       		    $table->timestamp('delivery_time')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-      		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
       		    $table->index('id_rider','id_rider');
       		    $table->index('id_lang','id_lang');
@@ -65,17 +57,10 @@ class CreateOrdersTable extends Migration
                    ->onUpdate('cascade');
 
       		    $table->timestamps();
-
       		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('orders');
     }
 }
