@@ -11,7 +11,11 @@ class CreateCountryTable extends Migration
         Schema::create('country', function(Blueprint $table) {
 		    $table->engine = 'InnoDB';
 
+<<<<<<< HEAD
         $table->increments('id_country')->unsigned();
+=======
+		    $table->increments('id_country')->unsigned();
+>>>>>>> 66a411805275504ef0f5c1beed3c02bf4341ad7d
 		    $table->string('name', 100);
 		    $table->integer('id_lang')->unsigned()->default('0');
 		    $table->boolean('active')->unsigned()->default('0');

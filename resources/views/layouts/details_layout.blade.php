@@ -23,7 +23,7 @@
             <td>Breve descripción o función</td>
               <td class="td-actions">
                 <!--redirect to the correct page  -->
-                <a href="{{route('customers.details')}}" class="btn btn-small btn-primary">
+                <a href="#" class="btn btn-small btn-primary">
                   <i class="fas fa-sign-out-alt"></i>
                 </a>
               </td>

@@ -32,11 +32,14 @@ class CreateCustomersTable extends Migration
               ->references('id_language')->on('language')
               ->onDelete('cascade')
               ->onUpdate('cascade');
+<<<<<<< HEAD
 
          $table->foreign('id_address')
              ->references('id_address')->on('address')
              ->onDelete('cascade')
              ->onUpdate('cascade');
+=======
+>>>>>>> 66a411805275504ef0f5c1beed3c02bf4341ad7d
   		});
     }
 

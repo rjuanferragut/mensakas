@@ -1,4 +1,5 @@
 @extends('layouts.dashboard.sidebar')
+@extends('layouts.dashboard.breadcrum')
 @section('content')
 <div class="container pl-5">
   <div>
