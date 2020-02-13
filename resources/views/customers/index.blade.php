@@ -1,22 +1,5 @@
 @extends('layouts.dashboard.sidebar')
 @section('content')
-
-<!-- <div class="container pl-5">
-  <div>
-    <h1 class="mt-5 text-center"> Welcome to the Customer's panel</h1>
-    <ul>
-      <li>CREATE</li>
-      <li>READ</li> OK
-      <li>UPDATE</li>
-      <li>DELETE</li>
-    </ul>
-  </div> -->
-  <!-- este enlace ha de ir dentro del layouts.details_layout en el sitio indicado -->
-  <!-- <div class="links">
-    <a href="">Customer detail</a>
-  </div>
-</div>  -->
-
 <div class="container-fluid pl-5">
 	<div class="row">
 		<div class="col-md-12">
@@ -33,7 +16,7 @@
 								 <a class="dropdown-item" data-toggle="modal" data-target="#createCustomer">New customer</a>
                  <button type="button" class="dropdown-item" data-toggle="modal" data-target="#createCustomerModal">New customer</button>
                  <a class="dropdown-item" href="#">Order last first</a>
-                 <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                 <a class="dropdown-item" href="#">Something else here</a>
 								<div class="dropdown-divider"></div>
                 <a class="dropdown-item" style="color:red" href="#">Remove Customer</a>
 							</div>
@@ -97,15 +80,6 @@
               </li>
               <li class="page-item">
                 <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">4</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="#">5</a>
               </li>
               <li class="page-item">
                 <a class="page-link" href="#">Next</a>
