@@ -20,8 +20,6 @@ class CreateVehicleTable extends Migration
        $table->integer('policy_number')->default(null);
        $table->integer('id_insurance')->unsigned()->default(null);
        $table->integer('id_employee')->unsigned();
-       $table->timestamp('created_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-       $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
        $table->index('id_employee','employee_vehicle_id');
        $table->index('id_insurance','insurance_id');
@@ -41,12 +39,10 @@ class CreateVehicleTable extends Migration
          ->references('id_type_vehicle')->on('type_vehicle')
          ->onDelete('cascade')
          ->onUpdate('cascade');
+
        $table->timestamps();
-
    });
-
-
-   }
+}
 
    /**
     * Reverse the migrations.

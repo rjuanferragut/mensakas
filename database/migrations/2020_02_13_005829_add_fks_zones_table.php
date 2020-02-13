@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class AddFksZonesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up() {
       Schema::table('zones', function (Blueprint $table) {
         $table->foreign('id_state')
             ->references('id_state')->on('state')

@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateOrdersDetailsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('orders_details', function(Blueprint $table) {
     		    $table->engine = 'InnoDB';
 
@@ -60,13 +54,7 @@ class CreateOrdersDetailsTable extends Migration
     		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('orders_details');
     }
 }

@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateCustomersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up() {
       Schema::create('customers', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
@@ -25,11 +19,10 @@ class CreateCustomersTable extends Migration
   		    $table->string('last_name', 255)->default('0');
   		    $table->string('email', 150)->default('0');
   		    $table->integer('phone')->default('0');
-  		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
-  		    $table->timestamp('updated_on')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-  		    $table->string('reset_password_token', 40)->default('0');
+          $table->string('reset_password_token', 40)->default('0');
   		    $table->timestamp('reset_password_date')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 
+  		    $table->timestamps();
   		    $table->unique('phone','phone');
   		    $table->unique('email','email');
 
@@ -45,11 +38,6 @@ class CreateCustomersTable extends Migration
   		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('customers');

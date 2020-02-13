@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateProfilesLangTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('profiles_lang', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
@@ -39,13 +33,7 @@ class CreateProfilesLangTable extends Migration
   		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down()  {
 		    Schema::drop('profiles_lang');
     }
 }

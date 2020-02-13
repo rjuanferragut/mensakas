@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateOrdersStateTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('orders_state', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
@@ -25,14 +19,7 @@ class CreateOrdersStateTable extends Migration
   		    $table->timestamps();
     	});
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('orders_state');
     }
 }

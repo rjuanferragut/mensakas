@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateZonesTable extends Migration
 {
-  public function up()
-     {
+  public function up()  {
  		Schema::create('zones', function(Blueprint $table) {
  		    $table->engine = 'InnoDB';
 
@@ -18,19 +17,11 @@ class CreateZonesTable extends Migration
  		    $table->boolean('active')->default('0');
 
  		    $table->timestamps();
- 		});
-
-
+ 		    });
      }
 
-     /**
-      * Reverse the migrations.
-      *
-      * @return void
-      */
-     public function down()
-     {
- 		Schema::drop('zones');
+     public function down()  {
+ 		    Schema::drop('zones');
 
      }
 }

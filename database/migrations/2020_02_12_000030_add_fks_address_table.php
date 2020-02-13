@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class AddFksAddressTable extends Migration
 {
-    public function up()
-    {
+    public function up() {
       Schema::table('address', function (Blueprint $table) {
           $table->foreign('id_customer')
               ->references('id_customer')->on('customers')

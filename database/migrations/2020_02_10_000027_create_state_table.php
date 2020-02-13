@@ -6,8 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateStateTable extends Migration
 {
-  public function up()
-    {
+  public function up()  {
 		Schema::create('state', function(Blueprint $table) {
 		    $table->engine = 'InnoDB';
 
@@ -25,20 +24,10 @@ class CreateStateTable extends Migration
     		    ->onUpdate('cascade');
 
 		    $table->timestamps();
-
-		});
-
-
+		    });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-		Schema::drop('state');
-
+    public function down()  {
+		    Schema::drop('state');
     }
 }
