@@ -23,7 +23,7 @@
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
     <style>
         html, body {
-            background-color: #ffe;
+            background-color: #fff;
             color: #000;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
