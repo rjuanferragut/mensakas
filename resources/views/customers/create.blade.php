@@ -44,7 +44,7 @@
             <input type="text" class="form-control" id="customer_address_aux" placeholder="Apartment, studio, or floor" maxlength="128">
           </div>
           <div class="form-row">
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-4">
               <label for="customer_country">Country</label>
               <select id="customer_country" class="form-control">
                 <option selected>Choose...</option>
@@ -53,7 +53,7 @@
                 @endforeach
               </select>
             </div>
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-4">
               <label for="customer_state">State</label>
               <select id="customer_state" class="form-control">
                 <option selected>Choose...</option>
