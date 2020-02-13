@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateMessagesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up()  {
       Schema::create('messages', function(Blueprint $table) {
       		    $table->engine = 'InnoDB';
 
@@ -21,7 +15,6 @@ class CreateMessagesTable extends Migration
       		    $table->integer('id_supplier')->unsigned();
       		    $table->integer('id_rider')->unsigned();
       		    $table->text('message');
-      		    $table->timestamp('added_on')->default(DB::raw('CURRENT_TIMESTAMP'));
 
       		    $table->index('id_order','id_order');
       		    $table->index('id_supplier','id_supplier');
@@ -43,17 +36,10 @@ class CreateMessagesTable extends Migration
                 ->onUpdate('cascade');
 
               $table->timestamps();
-
       		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('messages');
     }
 }

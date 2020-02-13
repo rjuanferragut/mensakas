@@ -6,31 +6,20 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTaxRulesTable extends Migration
 {
-  public function up()
-  {
-  Schema::create('tax_rules', function(Blueprint $table) {
-      $table->engine = 'InnoDB';
+  public function up() {
+    Schema::create('tax_rules', function(Blueprint $table) {
+        $table->engine = 'InnoDB';
 
-      $table->increments('id_tax_rule')->unsigned();
-      $table->decimal('rate', 10, 3);
-      $table->boolean('active')->default('0');
-      $table->string('name', 32);
+        $table->increments('id_tax_rule')->unsigned();
+        $table->decimal('rate', 10, 3);
+        $table->boolean('active')->default('0');
+        $table->string('name', 32);
 
-      $table->timestamps();
-
-  });
-
-
+        $table->timestamps();
+      });
   }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-  Schema::drop('tax_rules');
-
+  public function down() {
+    Schema::drop('tax_rules');
   }
 }

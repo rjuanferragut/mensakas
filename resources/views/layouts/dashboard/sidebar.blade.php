@@ -7,7 +7,7 @@
       <ul class="navbar-nav">
         <li class="nav-item dropdown  customers-menu ">
           <a class="nav-link dropdown-toggle d-inline-block" href="{{route('home')}}" id="navbarDropdownMenuLink">
-            <img src="http://via.placeholder.com/50x50" class="customers-image" alt="customers Image" >
+            <img src="https://media-exp1.licdn.com/dms/image/C560BAQHZrWAf-vJoCA/company-logo_200_200/0?e=2159024400&v=beta&t=Ggf-Fbf9Oe0A_lLm6xfAISNgEBClfZ-qC8is_Ea59n0" class="customers-image" style="width:40px" alt="customers Image" >
             <span class="">Developer</span>
           </a>
         </li>

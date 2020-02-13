@@ -30,10 +30,10 @@
 						<li class="nav-item dropdown">
 							 <a class="nav-link dropdown-toggle" href="http://example.com" id="customersActionsMenu" data-toggle="dropdown">Actions</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="#customersActionsMenu">
-								 <!-- <a class="dropdown-item" data-toggle="modal" data-target="#createCustomer">New customer</a> -->
+								 <a class="dropdown-item" data-toggle="modal" data-target="#createCustomer">New customer</a>
                  <button type="button" class="dropdown-item" data-toggle="modal" data-target="#createCustomerModal">New customer</button>
                  <a class="dropdown-item" href="#">Order last first</a>
-                 <a class="dropdown-item" href="#">Something else here</a>
+                 <!-- <a class="dropdown-item" href="#">Something else here</a> -->
 								<div class="dropdown-divider"></div>
                 <a class="dropdown-item" style="color:red" href="#">Remove Customer</a>
 							</div>

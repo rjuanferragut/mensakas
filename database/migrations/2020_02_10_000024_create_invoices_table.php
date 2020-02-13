@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateInvoicesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up() {
       Schema::create('invoices', function(Blueprint $table) {
       		    $table->engine = 'InnoDB';
 
@@ -47,17 +41,9 @@ class CreateInvoicesTable extends Migration
       		    $table->timestamps();
 
       		});
-
-
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('invoices');
     }
 }

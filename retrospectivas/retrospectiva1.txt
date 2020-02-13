@@ -1,0 +1,4 @@
+Hemos fallado a la hora de calcular el tiempo de algunas especificaciones, y hemos tenido problemas creando los seeders ya que la base de
+datos es bastante compleja y hacerlas requiere de una gran cantidad de tiempo.
+En nuestro caso la base de datos está muy bien planteada ya que contempla muchos casos y soluciona problemas de la base de datos anterior.
+Las migraciones también han hecho gastar mucho tiempo por la complejidad de estas.

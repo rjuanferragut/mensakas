@@ -1,4 +1,4 @@
-@extends('layouts.adminpanel.sidebarAdminpanel')
+@extends('layouts.dashboard.sidebar')
 @section('content')
 <div class="container pl-5">
   <div>

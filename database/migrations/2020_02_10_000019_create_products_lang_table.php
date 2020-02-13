@@ -6,13 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateProductsLangTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
+    public function up() {
       Schema::create('products_lang', function(Blueprint $table) {
   		    $table->engine = 'InnoDB';
 
@@ -20,7 +14,6 @@ class CreateProductsLangTable extends Migration
   		    $table->integer('id_product')->unsigned();
   		    $table->integer('id_lang')->unsigned();
   		    $table->string('title', 255)->default(null);
-
   		    $table->index('id_product','id_product');
   		    $table->index('id_lang','id_lang');
 
@@ -35,17 +28,10 @@ class CreateProductsLangTable extends Migration
               ->onUpdate('cascade');
 
   		    $table->timestamps();
-
   		});
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('products_lang');
     }
 }

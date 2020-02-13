@@ -1,4 +1,5 @@
 @extends('layouts.dashboard.sidebar')
+@extends('layouts.details_layout')
 @section('content')
 <div class="container pl-5">
   <div>

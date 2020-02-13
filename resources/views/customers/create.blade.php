@@ -1,3 +1,5 @@
+@extends('layouts.dashboard.sidebar')
+@section('content')
 <div class="modal fade modal-xl" id="createCustomerModal" tabindex="-1" role="dialog" aria-labelledby="createCustomerModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
@@ -85,3 +87,4 @@
     </div>
   </div>
 </div>
+@endsection
