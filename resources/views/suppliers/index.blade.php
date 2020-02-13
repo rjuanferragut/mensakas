@@ -12,10 +12,6 @@
       <li>DELETE</li>
     </ul>
   </div>
-  <!-- este enlace ha de ir dentro del layouts.details_layout en el sitio indicado -->
-
-  <div class="links">
-    <a href="{{route('suppliers.details')}}">suppliers detail</a>
-  </div>
+  
 </div>
 @endsection

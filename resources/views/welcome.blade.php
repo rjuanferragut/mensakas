@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('dashboard')}}">Admin Panel</a>
+                    <a href="{{route('index')}}">Admin Panel</a>
                 </div>
             </div>
         </div>

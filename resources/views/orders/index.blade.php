@@ -10,10 +10,6 @@
       <li>UPDATE</li>
     </ul>
   </div>
-  <!-- este enlace ha de ir dentro del layouts.details_layout en el sitio indicado -->
 
-  <div class="links">
-    <a href="{{route('orders.details')}}">order detail</a>
-  </div>
 </div>
 @endsection
