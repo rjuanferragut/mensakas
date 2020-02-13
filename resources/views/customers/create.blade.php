@@ -45,6 +45,15 @@
           </div>
           <div class="form-row">
             <div class="form-group col-md-8">
+              <label for="customer_country">Country</label>
+              <select id="customer_country" class="form-control">
+                <option selected>Choose...</option>
+                @foreach ($countries as $country)
+                  <option>{{$country->name}}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="form-group col-md-8">
               <label for="customer_state">State</label>
               <select id="customer_state" class="form-control">
                 <option selected>Choose...</option>

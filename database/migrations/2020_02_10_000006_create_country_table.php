@@ -17,7 +17,7 @@ class CreateCountryTable extends Migration
 		    $table->engine = 'InnoDB';
 
 		    $table->increments('id_country')->unsigned();
-		    $table->integer('id_zone')->unsigned()->default('0');
+		    $table->string('name', 100);
 		    $table->integer('id_lang')->unsigned()->default('0');
 		    $table->boolean('active')->unsigned()->default('0');
 		    $table->string('iso_code', 3)->default('0');
@@ -25,11 +25,6 @@ class CreateCountryTable extends Migration
 
 		    $table->index('id_zone','fk_country_zones');
 		    $table->index('id_lang','fk_country_language');
-
-        $table->foreign('id_zone')
-            ->references('id_zone')->on('zones')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
 
 		    $table->foreign('id_lang')
 		        ->references('id_language')->on('language')
