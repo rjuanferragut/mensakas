@@ -12,11 +12,17 @@ class CreateZonesTable extends Migration
  		    $table->engine = 'InnoDB';
 
  		    $table->increments('id_zone')->unsigned();
- 		    $table->string('name', 64);
+ 		    $table->string('name', 100);
+        $table->integer('id_state')->unsigned();
  		    $table->integer('zipcode')->default('0');
  		    $table->boolean('active')->default('0');
 
- 		    $table->timestamps();
+        $table->foreign('id_state')
+            ->references('id_state')->on('state')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+        $table->timestamps();
 
  		});
 

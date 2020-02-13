@@ -13,18 +13,11 @@ class CreateStateTable extends Migration
 
 		    $table->increments('id_state')->unsigned();
 		    $table->integer('id_country')->unsigned();
-		    $table->integer('id_zone')->unsigned();
 		    $table->string('name', 64)->default(null);
 		    $table->boolean('active')->default('0');
 
 		    $table->index('id_state','id_state');
 		    $table->index('id_country','id_country');
-		    $table->index('id_zone','id_zone');
-
-		    $table->foreign('id_zone')
-		        ->references('id_zone')->on('zones')
-		        ->onDelete('cascade')
-		        ->onUpdate('cascade');
 
         $table->foreign('id_country')
     		    ->references('id_country')->on('country')
