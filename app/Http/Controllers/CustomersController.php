@@ -31,7 +31,6 @@ class CustomersController extends Controller
     }
 
     public function store(Request $request) {
-      // dd($request);
       $validate = $request->validate([
           'name' => 'required',
           'last_name' => 'required',
@@ -43,19 +42,19 @@ class CustomersController extends Controller
           'country' => 'required',
           'zip' => 'required'
       ]);
-      // dd($request);
 
       // if($validate){
-        DB::table('address')->insertGetId(
+        $isInsert = DB::table('address')->insert(
             ['id_country' => $request->country],
             ['id_state' => $request->state],
-            ['address' => $request->address],
+            ['address' => (string)$request->address],
             ['zipcode' => $request->zip],
-            ['active' => 1]
+            ['active' => '1'],
+            ['deleted' => '0']
         );
 
         $addressInserted = DB::table('address')->where('id_state', $request->state)->where('address', $request->address)->where('active', 2)->first();
-        dd($addressInserted);
+        dd($addressInserted, $isInsert, $request->address);
 
         DB::table('customers')->insertGetId(
             ['id_lang' => 1],
