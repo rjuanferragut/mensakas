@@ -11,8 +11,8 @@ class CreateAddressTable extends Migration
 		    $table->engine = 'InnoDB';
 
 		    $table->increments('id_address')->unsigned();
-		    $table->integer('id_country')->unsigned();
-		    $table->integer('id_state')->unsigned();
+		    $table->integer('id_country')->unsigned()->default('1');
+		    $table->integer('id_state')->unsigned()->default('1');
 		    $table->integer('id_customer')->unsigned()->nullable();
 		    $table->integer('id_supplier')->unsigned()->nullable();
 		    $table->integer('id_rider')->unsigned()->nullable();
