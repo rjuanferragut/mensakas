@@ -6,7 +6,7 @@
     <h1 class="mt-5 text-center"> Welcome to the Customer's panel</h1>
     <ul>
       <li>CREATE</li>
-      <li>READ</li>
+      <li>READ</li> OK
       <li>UPDATE</li>
       <li>DELETE</li>
     </ul>
@@ -25,11 +25,13 @@
 					<span class="navbar-toggler-icon"></span>
 				</button> <a class="navbar-brand" href="#">Customers</a>
 				<div class="collapse navbar-collapse" id="customersNavbar">
+          @include('customers.create')
 					<ul class="navbar-nav ml-md-auto">
 						<li class="nav-item dropdown">
 							 <a class="nav-link dropdown-toggle" href="http://example.com" id="customersActionsMenu" data-toggle="dropdown">Actions</a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="#customersActionsMenu">
-								 <a class="dropdown-item" href="#">New customer</a>
+								 {{-- <a class="dropdown-item" data-toggle="modal" data-target="#createCustomer">New customer</a> --}}
+                 <button type="button" class="dropdown-item" data-toggle="modal" data-target="#createCustomerModal">New customer</button>
                  <a class="dropdown-item" href="#">Order last first</a>
                  <a class="dropdown-item" href="#">Something else here</a>
 								<div class="dropdown-divider"></div>
@@ -56,7 +58,7 @@
     						<th>Name</th>
     						<th>Email</th>
     						<th>Phone</th>
-                <th>Select</th>
+                <th>Details</th>
     					</tr>
     				</thead>
     				<tbody>
@@ -66,7 +68,7 @@
                     {{$customer->id_customer}}
                   </td>
                   <td>
-                    {{$customer->first_name}}
+                    {{$customer->first_name}} {{$customer->last_name}}
                   </td>
                   <td>
                     {{$customer->email}}
@@ -74,7 +76,11 @@
                   <td>
                     {{$customer->phone}}
                   </td>
-                  <td><input type="checkbox" name="" value=""></td>
+                  <td>
+                    <a href="#" class="btn btn-small btn-light">
+                      <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                  </td>
                 </tr>
               @endforeach
     				</tbody>
@@ -82,7 +88,7 @@
 				</div>
 				<div class="card-footer">
 					<nav>
-            <ul class="pagination">
+            <ul class="pagination justify-content-end">
               <li class="page-item">
                 <a class="page-link" href="#">Previous</a>
               </li>

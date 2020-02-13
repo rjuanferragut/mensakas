@@ -16,7 +16,8 @@ class CustomersController extends Controller
     public function index()
     {
       $customers = DB::table('customers')->paginate(10);
-        return view('customers.index', compact('customers'));
+      $states = DB::table('state')->get();
+        return view('customers.index', compact('customers', 'states'));
     }
 
     public function details($id) {
@@ -24,11 +25,13 @@ class CustomersController extends Controller
     }
 
     public function create() {
-        return view('customers.create');
+        //
     }
 
     public function store(Request $request) {
-        dd($request);
+        // dd($request);
+
+        return redirect()->route('customers.index');
     }
 
     public function show($id)
