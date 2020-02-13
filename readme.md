@@ -39,7 +39,11 @@ El fichero .env tendrá una lista con las crendenciales ya puestas por defecto. 
 - **[DB_USERNAME=root]**     Nombre de usuario de la DB
 - **[DB_PASSWORD=P@ssw0rd]** Contraseña de autenticación
 
-Una vez realizado este paso, podemos ejecutar el comando [php artisan migrate](https://laravel.com/docs/5.8/migrations#running-migrations) para comenzar a crear todas las tablas. Puedes encontrar más información sobre las migraciones en [Laravel](https://laravel.com/docs/5.8/migrations) que te pueden ayudar a resolver algunas dudas o a modificar las migraciones de ser necesario.
+Una vez realizado este paso, podemos ejecutar el comando [php artisan migrate](https://laravel.com/docs/5.8/migrations#running-migrations) para comenzar a crear todas las tablas. Puedes encontrar más información sobre las migraciones en [Laravel](https://laravel.com/docs/5.8/migrations) que te pueden ayudar a resolver algunas dudas o a modificar las migraciones de ser necesario. Si queremos tirar la base de datos para crear una nueva, debemos tirar la base de datos y crear una nueva con el mismo nombree (mensakas).
+
+Cuando tengamos las migraciones realizadas, tendremos una base de datos totalmente funcional.
+
+Para poder ejecutar laravel, necesitamos usar el comando php artisan serve en el directorio correspondiente, de esta manera podremos acceder a nuestra página.
 
 ## Laravel Sponsors
 
