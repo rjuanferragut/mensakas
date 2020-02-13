@@ -23,7 +23,6 @@ class CreateCountryTable extends Migration
 		    $table->string('iso_code', 3)->default('0');
 		    $table->integer('call_prefix')->unsigned()->default('0');
 
-		    $table->index('id_zone','fk_country_zones');
 		    $table->index('id_lang','fk_country_language');
 
 		    $table->foreign('id_lang')
